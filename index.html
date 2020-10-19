@@ -44,8 +44,8 @@
         // get the form data
         // there are many ways to get this data using jQuery (you can use the class or id also)
         var formData = {
-            'Story'              : $('input[name=Story]').val(),
-            'Location'             : $('input[name=Location]').val(),
+            'story'              : $('input[name=story]').val(),
+            'location'             : $('input[name=location]').val(),
             
         };
 
@@ -119,8 +119,8 @@
           <div class="form_container">
             <div class="form-block w-form">
 		    <form  method="POST" class="form">
-              		<input type="text" class="text-field-2 w-input" maxlength="256" name="Story" data-name="Story" placeholder="100 character limit" id="Story">
-			<input type="text" class="text-field w-input" maxlength="256" name="Location" data-name="Location" placeholder="City / Suburb" id="Location" required="">
+              		<input type="text" class="text-field-2 w-input" maxlength="256" name="story" data-name="story" placeholder="100 character limit" id="story">
+			<input type="text" class="text-field w-input" maxlength="256" name="location" data-name="location" placeholder="City / Suburb" id="location" required="">
 			<input type="hidden" name="_next" value="//path/thankyou.html" />
 			    <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button"></form>
               <div class="w-form-done">
