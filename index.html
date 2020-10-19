@@ -35,6 +35,43 @@
   padding-right:16px;
  }
 </style>
+	<script>
+	$(document).ready(function() {
+
+    // process the form
+    $('form').submit(function(event) {
+
+        // get the form data
+        // there are many ways to get this data using jQuery (you can use the class or id also)
+        var formData = {
+            'story'              : $('input[name=Story]').val(),
+            'location'             : $('input[name=Location]').val(),
+            
+        };
+
+        // process the form
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'https://formspree.io/f/mwkwvzwp', // the url where we want to POST
+            data        : formData, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+                        encode          : true
+        })
+            // using the done promise callback
+            .done(function(data) {
+
+                // log data to the console so we can see
+                console.log(data);
+
+                // here we will handle errors and validation messages
+            });
+
+        // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
+    });
+
+});
+</script>
 </head>
 <body>
   <div class="content_container">
@@ -81,7 +118,7 @@
           </div>
           <div class="form_container">
             <div class="form-block w-form">
-		    <form action="https://formspree.io/f/mwkwvzwp" method="POST" class="form">
+		    <form  method="POST" class="form">
               		<input type="text" class="text-field-2 w-input" maxlength="256" name="Story" data-name="Story" placeholder="100 character limit" id="Story">
 			<input type="text" class="text-field w-input" maxlength="256" name="Location" data-name="Location" placeholder="City / Suburb" id="Location" required="">
 			<input type="hidden" name="_next" value="//path/thankyou.html" />
