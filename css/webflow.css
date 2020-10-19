@@ -311,8 +311,8 @@ input[type="reset"] {
   text-align: center;
   background-color: #dddddd;
 }
-.done {
-  display: none;
+.show {
+  display: block;
   padding: 20px;
   text-align: center;
   background-color: #dddddd;
