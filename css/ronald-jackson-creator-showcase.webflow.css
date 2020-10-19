@@ -1,3 +1,16 @@
+.form-done {
+  display: none;
+  padding: 20px;
+  text-align: center;
+  background-color: #dddddd;
+}
+.show {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  background-color: #dddddd;
+}
+
 .content_container {
   height: 100vh;
   background-color: #fff;
