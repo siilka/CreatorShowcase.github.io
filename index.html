@@ -48,7 +48,7 @@
             'location'             : $('input[name=location]').val(),
             
         };
-	console.log(formData);
+	
         // process the form
         $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
@@ -61,7 +61,7 @@
             .done(function(data) {
 
                 // log data to the console so we can see
-                console.log(data);
+                $( "#formdone" ).addClass( "show" );
 
                 // here we will handle errors and validation messages
             });
@@ -123,7 +123,7 @@
 			<input type="text" class="text-field w-input" maxlength="256" name="location" placeholder="City / Suburb" id="location" required="">
 			<input type="hidden" name="_next" value="//path/thankyou.html" />
 			    <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button"></form>
-              <div class="w-form-done">
+              <div id="formdone" class="w-form-done">
                 <div>Thank you! Your submission has been received!</div>
               </div>
               <div class="w-form-fail">
